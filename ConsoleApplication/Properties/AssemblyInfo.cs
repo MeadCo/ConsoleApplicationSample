@@ -7,9 +7,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Console App :: ScriptX Printing of HTML")]
 [assembly: AssemblyDescription("Printing Html with ScriptX")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Mead & Co Ltd")]
+[assembly: AssemblyCompany("Mead & Co Ltd.")]
 [assembly: AssemblyProduct("ScriptX Printing Sample")]
-[assembly: AssemblyCopyright("Copyright ©  2015, Mead & Co Ltd")]
+[assembly: AssemblyCopyright("Copyright © 2015, Mead & Co Ltd.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

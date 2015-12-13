@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Licensing.cs" />
     <Compile Include="Logging.cs" />
+    <Compile Include="PrintHtmlExCallback.cs" />
     <Compile Include="Printing.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

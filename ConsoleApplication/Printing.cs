@@ -26,6 +26,52 @@ namespace ScriptXPrinting
             Dispose(false);
         }
 
+        /// <summary>
+        /// Returns the ScriptX Printing object ... so Printing.Printer.heading = "" etc
+        /// </summary>
+        public ScriptX.printing Printer
+        {
+            get
+            {
+                Initialise();
+                return _printer;
+            }
+        }
+
+        /// <summary>
+        /// The reason for an initialisation failure.
+        /// </summary>
+        public string ErrorReason
+        {
+            get
+            {
+                return _lastError;
+            }
+        }
+
+        /// <summary>
+        /// The installed version of the ScriptX factory object
+        /// </summary>
+        public string Version
+        {
+            get
+            {
+                string sv = string.Empty;
+
+                Initialise();
+                if (_factory != null)
+                {
+                    sv = _factory.ScriptXVersion;
+                }
+
+                return sv;
+            }
+        }
+
+
+        /// <summary>
+        /// Instantiate the factory and get the printer object
+        /// </summary>
         private void Initialise()
         {
             if (_printer == null)
@@ -41,48 +87,6 @@ namespace ScriptXPrinting
                 }
             }
 
-        }
-
-        public string ErrorReason
-        {
-            get
-            {
-                return _lastError;
-            }
-        }
-
-        public string Version
-        {
-            get
-            {
-                string sv = string.Empty;
-                object vmaj = new object();
-                object vmin = new object();
-                object vbuild = new object();
-                object vpart = new object();
-
-                Initialise();
-                if (_factory != null)
-                {
-                    vmaj = "";
-                    vmin = "";
-                    vbuild = "";
-                    vpart = "";
-                    _factory.GetComponentVersion("ScriptX.Factory", ref vmaj, ref vmin, ref vbuild, ref vpart);
-                    sv = vmaj.ToString() + "." + vmin.ToString() + "." + vbuild.ToString() + "." + vpart.ToString();
-                }
-
-                return sv;
-            }
-        }
-
-        public ScriptX.printing Printer
-        {
-            get
-            {
-                Initialise();
-                return _printer;
-            }
         }
 
         public void Close()
